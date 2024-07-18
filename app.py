@@ -95,10 +95,10 @@ if uploaded_file is not None:
                 col1, col2, col3, col4, col5 = st.columns(5)
                 
                 col1.metric("R2-Score", f"{r2 * 100} %")
-                col2.metric("MAPE", mape)
-                col3.metric("MAE", mae)
-                col4.metric("RMSE", rmse)
-                col5.metric("MSE", mse)
+                # col2.metric("MAPE", mape)
+                col2.metric("MAE", mae)
+                col3.metric("RMSE", rmse)
+                col4.metric("MSE", mse)
                 
                 if not use_poly:
                                                     # Example coefficients and feature names
