@@ -118,15 +118,21 @@ if uploaded_file is not None:
                     # Sort by absolute coefficient in descending order
                     df_sorted = df_t.sort_values(by=0, ascending=False)
                     
-                    st.write(" ### Variable Impact ")
-                    col11, col22,col33 = st.columns([2,2,6])
-                    col11.write(f"Higest Impact Variables  ")
-                    col11.success(df_sorted.iloc[0]["index"])
+                    for i in df_sorted["index"]:
+                         print()
                     
-                    col22.write(f"lowest Impact Variables  :")
-                    col22.success(df_sorted.iloc[-1]["index"])
+                    
+                    st.write("### All Variable Impacts:")
 
-                    
+                    cols = st.columns([2, 2, 2, 2])
+                    # Display variable impacts in multiple columns
+                    for ind, i in enumerate(df_sorted["index"]):
+                        col = cols[ind % len(cols)]
+                        col.success(f"{i}: {round(s.T.loc[i][0], 2)}")    
+                        
+                        
+                        
+                
                 
 
                 
